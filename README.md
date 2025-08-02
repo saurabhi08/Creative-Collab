@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Mind & Market - Creative Collab (Library + Supermarket)
 
 A unique application that combines library and supermarket functionality, creating an innovative shopping and reading experience.
@@ -152,3 +153,6 @@ This project is created for educational purposes.
 ## 📞 Support
 
 For questions or support, please open an issue in the repository. 
+=======
+# Creative-Collab
+>>>>>>> b3f8461ff217ab8b6aba5e590253fb712fa995df
