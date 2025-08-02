@@ -1,0 +1,147 @@
+@MindAndMarket_HostAddress = https://localhost:7000
+
+### Create Authors
+POST {{MindAndMarket_HostAddress}}/api/authors
+Content-Type: application/json
+
+{
+  "name": "Julia Child",
+  "biography": "Famous chef and cookbook author",
+  "nationality": "American",
+  "birthDate": "1912-08-15"
+}
+
+### Create Categories
+POST {{MindAndMarket_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "name": "Cookbooks",
+  "description": "Cooking and recipe books"
+}
+
+### Create Aisles
+POST {{MindAndMarket_HostAddress}}/api/aisles
+Content-Type: application/json
+
+{
+  "name": "Cooking Oils",
+  "description": "Various cooking oils and fats",
+  "aisleNumber": 3,
+  "location": "North side"
+}
+
+### Create Departments
+POST {{MindAndMarket_HostAddress}}/api/departments
+Content-Type: application/json
+
+{
+  "name": "Organic Foods",
+  "description": "Organic and natural food products",
+  "managerName": "Sarah Johnson",
+  "isActive": true
+}
+
+### Create Books
+POST {{MindAndMarket_HostAddress}}/api/books
+Content-Type: application/json
+
+{
+  "title": "The Mediterranean Diet Cookbook",
+  "description": "Healthy recipes from the Mediterranean region",
+  "isbn": "978-1234567890",
+  "publicationDate": "2023-01-15",
+  "price": 29.99,
+  "stockQuantity": 50,
+  "authorId": 1,
+  "categoryId": 1
+}
+
+### Create Products
+POST {{MindAndMarket_HostAddress}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Extra Virgin Olive Oil",
+  "description": "Premium Italian extra virgin olive oil",
+  "price": 12.99,
+  "stockQuantity": 100,
+  "sku": "EVOO-001",
+  "isOrganic": true,
+  "isGlutenFree": true,
+  "aisleId": 1,
+  "departmentId": 1
+}
+
+### Create Reading Spots
+POST {{MindAndMarket_HostAddress}}/api/readingspots
+Content-Type: application/json
+
+{
+  "name": "Book & Brew Corner",
+  "description": "Cozy reading area with coffee service",
+  "location": "Near the entrance",
+  "capacity": 20,
+  "isAvailable": true,
+  "amenities": "Coffee, WiFi, Comfortable seating"
+}
+
+### Create Events
+POST {{MindAndMarket_HostAddress}}/api/events
+Content-Type: application/json
+
+{
+  "title": "Mediterranean Cooking Demo",
+  "description": "Learn to cook Mediterranean dishes with our chef",
+  "startTime": "2024-01-15T14:00:00",
+  "endTime": "2024-01-15T16:00:00",
+  "location": "Cooking Demo Area",
+  "maxCapacity": 30,
+  "currentAttendees": 0,
+  "eventType": "Cooking Demo",
+  "isActive": true
+}
+
+### Get All Books
+GET {{MindAndMarket_HostAddress}}/api/books
+
+### Get All Products
+GET {{MindAndMarket_HostAddress}}/api/products
+
+### Get All Reading Spots
+GET {{MindAndMarket_HostAddress}}/api/readingspots
+
+### Get All Events
+GET {{MindAndMarket_HostAddress}}/api/events
+
+### Combined Features Testing
+
+### Link Book to Product
+POST {{MindAndMarket_HostAddress}}/api/books/1/products/1
+
+### Get Books for Product
+GET {{MindAndMarket_HostAddress}}/api/books/for-product/1
+
+### Get Products for Book
+GET {{MindAndMarket_HostAddress}}/api/books/1/products
+
+### Link Book to Department
+POST {{MindAndMarket_HostAddress}}/api/books/1/departments/1
+
+### Get Books for Department
+GET {{MindAndMarket_HostAddress}}/api/books/for-department/1
+
+### Link Book to Event
+POST {{MindAndMarket_HostAddress}}/api/books/1/events/1
+
+### Get Books for Event
+GET {{MindAndMarket_HostAddress}}/api/books/for-event/1
+
+### Remove Book from Product
+DELETE {{MindAndMarket_HostAddress}}/api/books/1/products/1
+
+### Remove Book from Department
+DELETE {{MindAndMarket_HostAddress}}/api/books/1/departments/1
+
+### Remove Book from Event
+DELETE {{MindAndMarket_HostAddress}}/api/books/1/events/1 
