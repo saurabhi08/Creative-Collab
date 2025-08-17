@@ -9,13 +9,17 @@ namespace MindAndMarket.Controllers
     public class DepartmentsController : ControllerBase
     {
         private readonly IDepartmentService _departmentService;
+        private readonly IProductService _productService;
 
-        public DepartmentsController(IDepartmentService departmentService)
+        public DepartmentsController(IDepartmentService departmentService, IProductService productService)
         {
             _departmentService = departmentService;
+            _productService = productService;
         }
 
-        // GET: api/departments
+        /// <summary>
+        /// Retrieves all departments.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<DepartmentDto>>> GetDepartments()
         {
@@ -23,7 +27,9 @@ namespace MindAndMarket.Controllers
             return Ok(departments);
         }
 
-        // GET: api/departments/5
+        /// <summary>
+        /// Retrieves a single department by ID.
+        /// </summary>
         [HttpGet("{id}")]
         public async Task<ActionResult<DepartmentDto>> GetDepartment(int id)
         {
@@ -35,7 +41,9 @@ namespace MindAndMarket.Controllers
             return Ok(department);
         }
 
-        // POST: api/departments
+        /// <summary>
+        /// Creates a new department.
+        /// </summary>
         [HttpPost]
         public async Task<ActionResult<DepartmentDto>> CreateDepartment(CreateDepartmentDto createDepartmentDto)
         {
@@ -43,7 +51,9 @@ namespace MindAndMarket.Controllers
             return CreatedAtAction(nameof(GetDepartment), new { id = department.Id }, department);
         }
 
-        // PUT: api/departments/5
+        /// <summary>
+        /// Updates an existing department by ID.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateDepartment(int id, UpdateDepartmentDto updateDepartmentDto)
         {
@@ -55,7 +65,9 @@ namespace MindAndMarket.Controllers
             return Ok(department);
         }
 
-        // DELETE: api/departments/5
+        /// <summary>
+        /// Deletes a department by ID.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDepartment(int id)
         {
@@ -65,6 +77,16 @@ namespace MindAndMarket.Controllers
                 return NotFound();
             }
             return NoContent();
+        }
+
+        /// <summary>
+        /// Retrieves products that belong to a specific department.
+        /// </summary>
+        [HttpGet("{id}/products")]
+        public async Task<ActionResult<IEnumerable<ProductDto>>> GetProductsForDepartment(int id)
+        {
+            var products = await _productService.GetProductsByDepartmentAsync(id);
+            return Ok(products);
         }
     }
 } 

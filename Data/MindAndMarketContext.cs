@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MindAndMarket.Models;
 
 namespace MindAndMarket.Data
 {
-    public class MindAndMarketContext : DbContext
+    public class MindAndMarketContext : IdentityDbContext<IdentityUser>
     {
         public MindAndMarketContext(DbContextOptions<MindAndMarketContext> options)
             : base(options)

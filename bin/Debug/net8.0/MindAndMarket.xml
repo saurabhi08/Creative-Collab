@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindAndMarket</name>
+    </assembly>
+    <members>
+        <member name="M:MindAndMarket.Controllers.AccountController.SeedAdmin">
+            <summary>
+            Seeds an admin user and role if they do not exist.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.AccountController.Login(MindAndMarket.Controllers.LoginRequest)">
+            <summary>
+            Login with username/password and create a cookie session.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.AccountController.Logout">
+            <summary>
+            Logout current user.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.AislesController.GetAisles">
+            <summary>
+            Retrieves all aisles.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.AislesController.GetAisle(System.Int32)">
+            <summary>
+            Retrieves a single aisle by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.AislesController.CreateAisle(MindAndMarket.DTOs.CreateAisleDto)">
+            <summary>
+            Creates a new aisle.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.AislesController.UpdateAisle(System.Int32,MindAndMarket.DTOs.UpdateAisleDto)">
+            <summary>
+            Updates an existing aisle by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.AislesController.DeleteAisle(System.Int32)">
+            <summary>
+            Deletes an aisle by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.AislesController.GetProductsForAisle(System.Int32)">
+            <summary>
+            Retrieves products located in a specific aisle.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.AuthorsController.GetAuthors">
+            <summary>
+            Retrieves all authors.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.AuthorsController.GetAuthor(System.Int32)">
+            <summary>
+            Retrieves a single author by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.AuthorsController.CreateAuthor(MindAndMarket.DTOs.CreateAuthorDto)">
+            <summary>
+            Creates a new author.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.AuthorsController.UpdateAuthor(System.Int32,MindAndMarket.DTOs.UpdateAuthorDto)">
+            <summary>
+            Updates an existing author by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.AuthorsController.DeleteAuthor(System.Int32)">
+            <summary>
+            Deletes an author by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.BooksController.GetBooks">
+            <summary>
+            Retrieves all books.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.BooksController.GetBook(System.Int32)">
+            <summary>
+            Retrieves a single book by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.BooksController.CreateBook(MindAndMarket.DTOs.CreateBookDto)">
+            <summary>
+            Creates a new book.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.BooksController.UpdateBook(System.Int32,MindAndMarket.DTOs.UpdateBookDto)">
+            <summary>
+            Updates an existing book by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.BooksController.DeleteBook(System.Int32)">
+            <summary>
+            Deletes a book by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.BooksController.GetBooksForProduct(System.Int32)">
+            <summary>
+            Retrieves books linked to the specified product.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.BooksController.GetProductsForBook(System.Int32)">
+            <summary>
+            Retrieves products linked to the specified book.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.BooksController.AddBookToProduct(System.Int32,System.Int32)">
+            <summary>
+            Links a book to a product.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.BooksController.RemoveBookFromProduct(System.Int32,System.Int32)">
+            <summary>
+            Unlinks a book from a product.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.BooksController.GetBooksForDepartment(System.Int32)">
+            <summary>
+            Retrieves books linked to a department.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.CategoriesController.GetCategories">
+            <summary>
+            Retrieves all categories.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.CategoriesController.GetCategory(System.Int32)">
+            <summary>
+            Retrieves a single category by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.CategoriesController.CreateCategory(MindAndMarket.DTOs.CreateCategoryDto)">
+            <summary>
+            Creates a new category.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.CategoriesController.UpdateCategory(System.Int32,MindAndMarket.DTOs.UpdateCategoryDto)">
+            <summary>
+            Updates an existing category by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.CategoriesController.DeleteCategory(System.Int32)">
+            <summary>
+            Deletes a category by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.DataController.SeedData">
+            <summary>
+            Seeds the database with sample data.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.DepartmentsController.GetDepartments">
+            <summary>
+            Retrieves all departments.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.DepartmentsController.GetDepartment(System.Int32)">
+            <summary>
+            Retrieves a single department by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.DepartmentsController.CreateDepartment(MindAndMarket.DTOs.CreateDepartmentDto)">
+            <summary>
+            Creates a new department.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.DepartmentsController.UpdateDepartment(System.Int32,MindAndMarket.DTOs.UpdateDepartmentDto)">
+            <summary>
+            Updates an existing department by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.DepartmentsController.DeleteDepartment(System.Int32)">
+            <summary>
+            Deletes a department by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.DepartmentsController.GetProductsForDepartment(System.Int32)">
+            <summary>
+            Retrieves products that belong to a specific department.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.EventsController.GetEvents">
+            <summary>
+            Retrieves all events.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.EventsController.GetEvent(System.Int32)">
+            <summary>
+            Retrieves a single event by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.EventsController.CreateEvent(MindAndMarket.DTOs.CreateEventDto)">
+            <summary>
+            Creates a new event.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.EventsController.UpdateEvent(System.Int32,MindAndMarket.DTOs.UpdateEventDto)">
+            <summary>
+            Updates an existing event by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.EventsController.DeleteEvent(System.Int32)">
+            <summary>
+            Deletes an event by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.ProductsController.GetProducts">
+            <summary>
+            Retrieves all products with aisle and department information.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.ProductsController.GetProduct(System.Int32)">
+            <summary>
+            Retrieves a single product by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.ProductsController.CreateProduct(MindAndMarket.DTOs.CreateProductDto)">
+            <summary>
+            Creates a new product. Admin only.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.ProductsController.UpdateProduct(System.Int32,MindAndMarket.DTOs.UpdateProductDto)">
+            <summary>
+            Updates an existing product by ID. Admin only.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.ProductsController.DeleteProduct(System.Int32)">
+            <summary>
+            Deletes a product by ID. Admin only.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.ProductsController.GetProductsByDepartment(System.Int32)">
+            <summary>
+            Lists products belonging to a specific department.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.ProductsController.GetProductsByAisle(System.Int32)">
+            <summary>
+            Lists products located in a specific aisle.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.ReadingSpotsController.GetReadingSpots">
+            <summary>
+            Retrieves all reading spots.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.ReadingSpotsController.GetReadingSpot(System.Int32)">
+            <summary>
+            Retrieves a single reading spot by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.ReadingSpotsController.CreateReadingSpot(MindAndMarket.DTOs.CreateReadingSpotDto)">
+            <summary>
+            Creates a new reading spot.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.ReadingSpotsController.UpdateReadingSpot(System.Int32,MindAndMarket.DTOs.UpdateReadingSpotDto)">
+            <summary>
+            Updates an existing reading spot by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.ReadingSpotsController.DeleteReadingSpot(System.Int32)">
+            <summary>
+            Deletes a reading spot by ID.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.StoreController.Index">
+            <summary>
+            Displays a list of products.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.StoreController.Details(System.Int32)">
+            <summary>
+            Displays details for a single product.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.StoreController.ByDepartment(System.Int32)">
+            <summary>
+            Displays products filtered by department.
+            </summary>
+        </member>
+        <member name="M:MindAndMarket.Controllers.StoreController.ByAisle(System.Int32)">
+            <summary>
+            Displays products filtered by aisle.
+            </summary>
+        </member>
+        <member name="T:MindAndMarket.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:MindAndMarket.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MindAndMarket.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MindAndMarket.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MindAndMarket.Migrations.AddIdentity">
+            <inheritdoc />
+        </member>
+        <member name="M:MindAndMarket.Migrations.AddIdentity.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MindAndMarket.Migrations.AddIdentity.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MindAndMarket.Migrations.AddIdentity.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -15,7 +15,9 @@ namespace MindAndMarket.Controllers
             _readingSpotService = readingSpotService;
         }
 
-        // GET: api/readingspots
+        /// <summary>
+        /// Retrieves all reading spots.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ReadingSpotDto>>> GetReadingSpots()
         {
@@ -23,7 +25,9 @@ namespace MindAndMarket.Controllers
             return Ok(readingSpots);
         }
 
-        // GET: api/readingspots/5
+        /// <summary>
+        /// Retrieves a single reading spot by ID.
+        /// </summary>
         [HttpGet("{id}")]
         public async Task<ActionResult<ReadingSpotDto>> GetReadingSpot(int id)
         {
@@ -35,7 +39,9 @@ namespace MindAndMarket.Controllers
             return Ok(readingSpot);
         }
 
-        // POST: api/readingspots
+        /// <summary>
+        /// Creates a new reading spot.
+        /// </summary>
         [HttpPost]
         public async Task<ActionResult<ReadingSpotDto>> CreateReadingSpot(CreateReadingSpotDto createReadingSpotDto)
         {
@@ -43,7 +49,9 @@ namespace MindAndMarket.Controllers
             return CreatedAtAction(nameof(GetReadingSpot), new { id = readingSpot.Id }, readingSpot);
         }
 
-        // PUT: api/readingspots/5
+        /// <summary>
+        /// Updates an existing reading spot by ID.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateReadingSpot(int id, UpdateReadingSpotDto updateReadingSpotDto)
         {
@@ -55,7 +63,9 @@ namespace MindAndMarket.Controllers
             return Ok(readingSpot);
         }
 
-        // DELETE: api/readingspots/5
+        /// <summary>
+        /// Deletes a reading spot by ID.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteReadingSpot(int id)
         {

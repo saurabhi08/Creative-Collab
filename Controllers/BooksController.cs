@@ -15,7 +15,9 @@ namespace MindAndMarket.Controllers
             _bookService = bookService;
         }
 
-        // GET: api/books
+        /// <summary>
+        /// Retrieves all books.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<BookDto>>> GetBooks()
         {
@@ -23,7 +25,9 @@ namespace MindAndMarket.Controllers
             return Ok(books);
         }
 
-        // GET: api/books/5
+        /// <summary>
+        /// Retrieves a single book by ID.
+        /// </summary>
         [HttpGet("{id}")]
         public async Task<ActionResult<BookDto>> GetBook(int id)
         {
@@ -35,7 +39,9 @@ namespace MindAndMarket.Controllers
             return Ok(book);
         }
 
-        // POST: api/books
+        /// <summary>
+        /// Creates a new book.
+        /// </summary>
         [HttpPost]
         public async Task<ActionResult<BookDto>> CreateBook(CreateBookDto createBookDto)
         {
@@ -43,7 +49,9 @@ namespace MindAndMarket.Controllers
             return CreatedAtAction(nameof(GetBook), new { id = book.Id }, book);
         }
 
-        // PUT: api/books/5
+        /// <summary>
+        /// Updates an existing book by ID.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateBook(int id, UpdateBookDto updateBookDto)
         {
@@ -55,7 +63,9 @@ namespace MindAndMarket.Controllers
             return Ok(book);
         }
 
-        // DELETE: api/books/5
+        /// <summary>
+        /// Deletes a book by ID.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBook(int id)
         {
@@ -69,7 +79,9 @@ namespace MindAndMarket.Controllers
 
         // Combined Features
 
-        // GET: api/books/for-product/5
+        /// <summary>
+        /// Retrieves books linked to the specified product.
+        /// </summary>
         [HttpGet("for-product/{productId}")]
         public async Task<ActionResult<IEnumerable<BookDto>>> GetBooksForProduct(int productId)
         {
@@ -77,7 +89,9 @@ namespace MindAndMarket.Controllers
             return Ok(books);
         }
 
-        // GET: api/books/5/products
+        /// <summary>
+        /// Retrieves products linked to the specified book.
+        /// </summary>
         [HttpGet("{bookId}/products")]
         public async Task<ActionResult<IEnumerable<ProductDto>>> GetProductsForBook(int bookId)
         {
@@ -85,7 +99,9 @@ namespace MindAndMarket.Controllers
             return Ok(products);
         }
 
-        // POST: api/books/5/products/10
+        /// <summary>
+        /// Links a book to a product.
+        /// </summary>
         [HttpPost("{bookId}/products/{productId}")]
         public async Task<IActionResult> AddBookToProduct(int bookId, int productId)
         {
@@ -97,7 +113,9 @@ namespace MindAndMarket.Controllers
             return Ok();
         }
 
-        // DELETE: api/books/5/products/10
+        /// <summary>
+        /// Unlinks a book from a product.
+        /// </summary>
         [HttpDelete("{bookId}/products/{productId}")]
         public async Task<IActionResult> RemoveBookFromProduct(int bookId, int productId)
         {
@@ -109,7 +127,9 @@ namespace MindAndMarket.Controllers
             return NoContent();
         }
 
-        // GET: api/books/for-department/5
+        /// <summary>
+        /// Retrieves books linked to a department.
+        /// </summary>
         [HttpGet("for-department/{departmentId}")]
         public async Task<ActionResult<IEnumerable<BookDto>>> GetBooksForDepartment(int departmentId)
         {

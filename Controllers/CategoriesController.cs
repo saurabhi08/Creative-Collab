@@ -15,7 +15,9 @@ namespace MindAndMarket.Controllers
             _categoryService = categoryService;
         }
 
-        // GET: api/categories
+        /// <summary>
+        /// Retrieves all categories.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CategoryDto>>> GetCategories()
         {
@@ -23,7 +25,9 @@ namespace MindAndMarket.Controllers
             return Ok(categories);
         }
 
-        // GET: api/categories/5
+        /// <summary>
+        /// Retrieves a single category by ID.
+        /// </summary>
         [HttpGet("{id}")]
         public async Task<ActionResult<CategoryDto>> GetCategory(int id)
         {
@@ -35,7 +39,9 @@ namespace MindAndMarket.Controllers
             return Ok(category);
         }
 
-        // POST: api/categories
+        /// <summary>
+        /// Creates a new category.
+        /// </summary>
         [HttpPost]
         public async Task<ActionResult<CategoryDto>> CreateCategory(CreateCategoryDto createCategoryDto)
         {
@@ -43,7 +49,9 @@ namespace MindAndMarket.Controllers
             return CreatedAtAction(nameof(GetCategory), new { id = category.Id }, category);
         }
 
-        // PUT: api/categories/5
+        /// <summary>
+        /// Updates an existing category by ID.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCategory(int id, UpdateCategoryDto updateCategoryDto)
         {
@@ -55,7 +63,9 @@ namespace MindAndMarket.Controllers
             return Ok(category);
         }
 
-        // DELETE: api/categories/5
+        /// <summary>
+        /// Deletes a category by ID.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {

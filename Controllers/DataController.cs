@@ -14,7 +14,9 @@ namespace MindAndMarket.Controllers
             _dataSeedService = dataSeedService;
         }
 
-        // POST: api/data/seed
+        /// <summary>
+        /// Seeds the database with sample data.
+        /// </summary>
         [HttpPost("seed")]
         public async Task<IActionResult> SeedData()
         {

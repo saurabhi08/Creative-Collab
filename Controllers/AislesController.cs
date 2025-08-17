@@ -9,13 +9,17 @@ namespace MindAndMarket.Controllers
     public class AislesController : ControllerBase
     {
         private readonly IAisleService _aisleService;
+        private readonly IProductService _productService;
 
-        public AislesController(IAisleService aisleService)
+        public AislesController(IAisleService aisleService, IProductService productService)
         {
             _aisleService = aisleService;
+            _productService = productService;
         }
 
-        // GET: api/aisles
+        /// <summary>
+        /// Retrieves all aisles.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AisleDto>>> GetAisles()
         {
@@ -23,7 +27,9 @@ namespace MindAndMarket.Controllers
             return Ok(aisles);
         }
 
-        // GET: api/aisles/5
+        /// <summary>
+        /// Retrieves a single aisle by ID.
+        /// </summary>
         [HttpGet("{id}")]
         public async Task<ActionResult<AisleDto>> GetAisle(int id)
         {
@@ -35,7 +41,9 @@ namespace MindAndMarket.Controllers
             return Ok(aisle);
         }
 
-        // POST: api/aisles
+        /// <summary>
+        /// Creates a new aisle.
+        /// </summary>
         [HttpPost]
         public async Task<ActionResult<AisleDto>> CreateAisle(CreateAisleDto createAisleDto)
         {
@@ -43,7 +51,9 @@ namespace MindAndMarket.Controllers
             return CreatedAtAction(nameof(GetAisle), new { id = aisle.Id }, aisle);
         }
 
-        // PUT: api/aisles/5
+        /// <summary>
+        /// Updates an existing aisle by ID.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAisle(int id, UpdateAisleDto updateAisleDto)
         {
@@ -55,7 +65,9 @@ namespace MindAndMarket.Controllers
             return Ok(aisle);
         }
 
-        // DELETE: api/aisles/5
+        /// <summary>
+        /// Deletes an aisle by ID.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAisle(int id)
         {
@@ -65,6 +77,16 @@ namespace MindAndMarket.Controllers
                 return NotFound();
             }
             return NoContent();
+        }
+
+        /// <summary>
+        /// Retrieves products located in a specific aisle.
+        /// </summary>
+        [HttpGet("{id}/products")]
+        public async Task<ActionResult<IEnumerable<ProductDto>>> GetProductsForAisle(int id)
+        {
+            var products = await _productService.GetProductsByAisleAsync(id);
+            return Ok(products);
         }
     }
 } 

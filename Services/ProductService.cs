@@ -109,5 +109,49 @@ namespace MindAndMarket.Services
             await _context.SaveChangesAsync();
             return true;
         }
+
+        public async Task<IEnumerable<ProductDto>> GetProductsByDepartmentAsync(int departmentId)
+        {
+            return await _context.Products
+                .Include(p => p.Aisle)
+                .Include(p => p.Department)
+                .Where(p => p.DepartmentId == departmentId)
+                .Select(p => new ProductDto
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Description = p.Description,
+                    Price = p.Price,
+                    StockQuantity = p.StockQuantity,
+                    SKU = p.SKU,
+                    IsOrganic = p.IsOrganic,
+                    IsGlutenFree = p.IsGlutenFree,
+                    AisleName = p.Aisle.Name,
+                    DepartmentName = p.Department.Name
+                })
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<ProductDto>> GetProductsByAisleAsync(int aisleId)
+        {
+            return await _context.Products
+                .Include(p => p.Aisle)
+                .Include(p => p.Department)
+                .Where(p => p.AisleId == aisleId)
+                .Select(p => new ProductDto
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Description = p.Description,
+                    Price = p.Price,
+                    StockQuantity = p.StockQuantity,
+                    SKU = p.SKU,
+                    IsOrganic = p.IsOrganic,
+                    IsGlutenFree = p.IsGlutenFree,
+                    AisleName = p.Aisle.Name,
+                    DepartmentName = p.Department.Name
+                })
+                .ToListAsync();
+        }
     }
 } 

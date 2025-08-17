@@ -15,7 +15,9 @@ namespace MindAndMarket.Controllers
             _eventService = eventService;
         }
 
-        // GET: api/events
+        /// <summary>
+        /// Retrieves all events.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EventDto>>> GetEvents()
         {
@@ -23,7 +25,9 @@ namespace MindAndMarket.Controllers
             return Ok(events);
         }
 
-        // GET: api/events/5
+        /// <summary>
+        /// Retrieves a single event by ID.
+        /// </summary>
         [HttpGet("{id}")]
         public async Task<ActionResult<EventDto>> GetEvent(int id)
         {
@@ -35,7 +39,9 @@ namespace MindAndMarket.Controllers
             return Ok(eventEntity);
         }
 
-        // POST: api/events
+        /// <summary>
+        /// Creates a new event.
+        /// </summary>
         [HttpPost]
         public async Task<ActionResult<EventDto>> CreateEvent(CreateEventDto createEventDto)
         {
@@ -43,7 +49,9 @@ namespace MindAndMarket.Controllers
             return CreatedAtAction(nameof(GetEvent), new { id = eventEntity.Id }, eventEntity);
         }
 
-        // PUT: api/events/5
+        /// <summary>
+        /// Updates an existing event by ID.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateEvent(int id, UpdateEventDto updateEventDto)
         {
@@ -55,7 +63,9 @@ namespace MindAndMarket.Controllers
             return Ok(eventEntity);
         }
 
-        // DELETE: api/events/5
+        /// <summary>
+        /// Deletes an event by ID.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEvent(int id)
         {

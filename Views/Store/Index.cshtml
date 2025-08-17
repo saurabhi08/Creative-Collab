@@ -1,0 +1,31 @@
+@model IEnumerable<MindAndMarket.DTOs.ProductDto>
+@{
+    ViewData["Title"] = ViewData["Title"] ?? "Store";
+}
+<h2>@ViewData["Title"]</h2>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Aisle</th>
+                <th>Department</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td>@p.Price.ToString("C")</td>
+                <td>@p.AisleName</td>
+                <td>@p.DepartmentName</td>
+                <td><a href="@Url.Action("Details", "Store", new { id = p.Id })">Details</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+

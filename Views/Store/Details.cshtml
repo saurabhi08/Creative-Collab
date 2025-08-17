@@ -1,0 +1,17 @@
+@model MindAndMarket.DTOs.ProductDto
+@{
+    ViewData["Title"] = Model.Name;
+}
+<h2>@Model.Name</h2>
+<p>@Model.Description</p>
+<ul>
+    <li><strong>Price:</strong> @Model.Price.ToString("C")</li>
+    <li><strong>Stock:</strong> @Model.StockQuantity</li>
+    <li><strong>SKU:</strong> @Model.SKU</li>
+    <li><strong>Aisle:</strong> @Model.AisleName</li>
+    <li><strong>Department:</strong> @Model.DepartmentName</li>
+    <li><strong>Organic:</strong> @(Model.IsOrganic ? "Yes" : "No")</li>
+    <li><strong>Gluten Free:</strong> @(Model.IsGlutenFree ? "Yes" : "No")</li>
+</ul>
+<p><a href="@Url.Action("Index", "Store")">Back to Store</a></p>
+

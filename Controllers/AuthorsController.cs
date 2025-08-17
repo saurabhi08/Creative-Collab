@@ -15,7 +15,9 @@ namespace MindAndMarket.Controllers
             _authorService = authorService;
         }
 
-        // GET: api/authors
+        /// <summary>
+        /// Retrieves all authors.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AuthorDto>>> GetAuthors()
         {
@@ -23,7 +25,9 @@ namespace MindAndMarket.Controllers
             return Ok(authors);
         }
 
-        // GET: api/authors/5
+        /// <summary>
+        /// Retrieves a single author by ID.
+        /// </summary>
         [HttpGet("{id}")]
         public async Task<ActionResult<AuthorDto>> GetAuthor(int id)
         {
@@ -35,7 +39,9 @@ namespace MindAndMarket.Controllers
             return Ok(author);
         }
 
-        // POST: api/authors
+        /// <summary>
+        /// Creates a new author.
+        /// </summary>
         [HttpPost]
         public async Task<ActionResult<AuthorDto>> CreateAuthor(CreateAuthorDto createAuthorDto)
         {
@@ -43,7 +49,9 @@ namespace MindAndMarket.Controllers
             return CreatedAtAction(nameof(GetAuthor), new { id = author.Id }, author);
         }
 
-        // PUT: api/authors/5
+        /// <summary>
+        /// Updates an existing author by ID.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAuthor(int id, UpdateAuthorDto updateAuthorDto)
         {
@@ -55,7 +63,9 @@ namespace MindAndMarket.Controllers
             return Ok(author);
         }
 
-        // DELETE: api/authors/5
+        /// <summary>
+        /// Deletes an author by ID.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAuthor(int id)
         {
